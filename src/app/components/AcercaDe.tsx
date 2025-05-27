@@ -22,7 +22,7 @@ export default function AcercaDe({ onBack, onOpenMenu }: { onBack: () => void, o
     IT: {
       title: 'CHI SONO',
       paragraph:
-        'Ciao! Sono Francisco, ma sui social media mi conoscono come Frank. Sono uno studente di Ingegneria del Software con un entusiasmo immenso per il mondo della tecnologia. Sono profondamente immerso nellaffascinante universo dello sviluppo web, esplorando strumenti come React, Next.js e Tailwind CSS, e sto muovendo i miei primi passi nel design UX/UI e nella creazione di API, unarea che mi entusiasma e che sto imparando a padroneggiare poco a poco. Adoro costruire soluzioni digitali che combinano creatività e funzionalità, e sono sempre aperto a imparare qualcosa di nuovo per portare le mie competenze al livello successivo.Fuori dallo schermo, la mia vita è piena di energia: sono un grande appassionato di calcio, sia guardarlo che giocarci con gli amici, e non cè niente che mi piaccia di più di una bella partita. La musica è la colonna sonora della mia giornata; ascolto di tutto, dal pop al rock, dal reggaeton ai classici, a seconda del momento. Sono anche un appassionato di videogiochi, specialmente FIFA, dove passo ore a perfezionare le mie abilità. Il cinema è unaltra delle mie grandi passioni: adoro immergermi in un bel film, dalle epiche dazione alle storie che fanno riflettere. E, naturalmente, la mia curiosità mi spinge a ricercare e imparare costantemente, che si tratti di software, design o qualsiasi argomento che stimoli il mio interesse.Sono in un viaggio di crescita continua e amo condividere ciò che creo.',
+        'Ciao! Sono Francisco, ma sui social media mi conoscono come Frank. Sono uno studente di Ingegneria del Software con un entusiasmo immenso per il mondo della tecnologia. Sono profondamente immerso nellaffascinante universo dello sviluppo web, esplorando strumenti come React, Next.js e Tailwind CSS, e sto muovendo i miei primi passi nel design UX/UI e nella creazione di API, unarea che mi entusiasma e che sto imparando a padroneggiare poco a poco. Adoro costruire soluzioni digitali che combinano creatività e funzionalità, e sono sempre aperto a imparare qualcosa di nuovo per portare le mie competenze al livello successivo.Fuori dallo schermo, la mia vita è piena di energia: sono un grande appassionato di calcio, sia guardarlo che giocarci con gli amici, e non cè niente che mi piaccia di più di una bella partita. La musica è la colonna sonora della mia giornata; ascolto di tutto, dal pop al rock, dal reggaeton ai classici, a seconda del momento. Sono anche un appassionato di videogiochi, specialmente FIFA, dove passo ore a perfezionare le mie abilità. Il cinema è unaltra delle mie grandi passioni: adoro immergermi in un bel film, dalle epiche dazione alle storie che fanno riflettere. E, naturalmente, la mia curiosità mi spinge a ricercare e imparare costantemente, che si tratti di software, design o qualsiasi argomento che stimoli il mio interesse.Sono in un viaggio di 성장 continua e amo condividere ciò che creo.',
       cv: 'curriculum vitae',
     },
   };
@@ -67,7 +67,14 @@ export default function AcercaDe({ onBack, onOpenMenu }: { onBack: () => void, o
           <h1 className="text-5xl sm:text-6xl font-bold mb-6">{t.title}</h1>
           <hr className="border-t border-[var(--text-color)] opacity-30 mb-6" />
           <p className="text-base sm:text-lg leading-relaxed">{t.paragraph}</p>
-          <p className="mt-10 text-sm sm:text-base hover:underline cursor-pointer">↓ {t.cv}</p>
+          <a
+            href="/cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-10 text-sm sm:text-base hover:underline cursor-pointer inline-flex items-center gap-1"
+          >
+            ↓ {t.cv}
+          </a>
         </div>
 
         <div className="flex-1 flex justify-center items-center">
