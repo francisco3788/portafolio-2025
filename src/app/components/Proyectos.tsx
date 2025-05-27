@@ -3,10 +3,26 @@
 import { useLanguage } from '../context/LanguageContext';
 import { Menu as MenuIcon } from 'lucide-react';
 
-export default function Proyectos({ onBack, onOpenMenu, onSelectProyecto }: {
-  onBack: () => void,
-  onOpenMenu: () => void,
-  onSelectProyecto: (proyecto: any) => void,
+// Definimos la interfaz Proyecto
+interface Proyecto {
+  titulo: { [key: string]: string };
+  descripcion: { [key: string]: string };
+  tecnologias: string[];
+  anio: number;
+  cliente: { [key: string]: string };
+  rol: { [key: string]: string };
+  imagen: string;
+  link: string;
+}
+
+export default function Proyectos({
+  onBack,
+  onOpenMenu,
+  onSelectProyecto,
+}: {
+  onBack: () => void;
+  onOpenMenu: () => void;
+  onSelectProyecto: (proyecto: Proyecto) => void;
 }) {
   const { language } = useLanguage();
 
@@ -17,7 +33,7 @@ export default function Proyectos({ onBack, onOpenMenu, onSelectProyecto }: {
         { name: 'Reproductor de Música Web', tag: 'Desarrollo web' },
         { name: 'UniTrack', tag: 'Productividad / Frontend' },
         { name: 'Pluo - Maquetación Landing Financiera', tag: 'Diseño UX/UI' },
-      ]
+      ],
     },
     EN: {
       title: 'PROJECTS',
@@ -25,7 +41,7 @@ export default function Proyectos({ onBack, onOpenMenu, onSelectProyecto }: {
         { name: 'Music Player Web App', tag: 'Web Development' },
         { name: 'UniTrack', tag: 'Productivity / Frontend' },
         { name: 'Pluo – Financial Landing Page Mockup', tag: 'UX/UI Design' },
-      ]
+      ],
     },
     IT: {
       title: 'PROGETTI',
@@ -33,7 +49,7 @@ export default function Proyectos({ onBack, onOpenMenu, onSelectProyecto }: {
         { name: 'Riproduttore Musicale Web', tag: 'Sviluppo Web' },
         { name: 'UniTrack', tag: 'Produttività / Frontend' },
         { name: 'Pluo – Maquette Landing Finanziaria', tag: 'Design UX/UI' },
-      ]
+      ],
     },
   };
 
@@ -42,7 +58,7 @@ export default function Proyectos({ onBack, onOpenMenu, onSelectProyecto }: {
       titulo: {
         ES: 'Reproductor de Música Web',
         EN: 'Web Music Player',
-        IT: 'Lettore Musicale Web'
+        IT: 'Lettore Musicale Web',
       },
       descripcion: {
         ES: 'Aplicación web funcional para subir, reproducir, eliminar y gestionar canciones. Permite a los usuarios cargar archivos de audio y controlar la reproducción desde una interfaz personalizada, desarrollada con Flask y desplegada en la nube',
@@ -54,12 +70,12 @@ export default function Proyectos({ onBack, onOpenMenu, onSelectProyecto }: {
       cliente: {
         ES: 'Proyecto académico personal',
         EN: 'Personal academic project',
-        IT: 'Progetto accademico personale'
+        IT: 'Progetto accademico personale',
       },
       rol: {
         ES: 'Desarrollador Fullstack',
         EN: 'Fullstack Developer',
-        IT: 'Sviluppatore Fullstack'
+        IT: 'Sviluppatore Fullstack',
       },
       imagen: '/reproductorMusica.png', // Ruta de la imagen
       link: 'https://reproductordemusica.onrender.com/', // Enlace al proyecto
@@ -68,24 +84,24 @@ export default function Proyectos({ onBack, onOpenMenu, onSelectProyecto }: {
       titulo: {
         ES: 'UniTrack',
         EN: 'UniTrack',
-        IT: 'UniTrack'
+        IT: 'UniTrack',
       },
       descripcion: {
         ES: 'Plataforma web para organizar tareas, clases y evaluaciones. Diseñada para estudiantes universitarios, permite registrar fechas clave, configurar asignaturas y recibir recordatorios automáticos para mejorar el rendimiento académico.',
         EN: 'Web platform to organize tasks, classes, and exams. Designed for university students, it allows users to record important dates, set up subjects, and receive automatic reminders to boost academic performance.',
-        IT: 'Piattaforma web per organizzare compiti, lezioni ed esami. Progettata per studenti universitari, consente di registrare date importanti, configurare materie e ricevere promemoria automatici per migliorare il rendimento accademico.'
+        IT: 'Piattaforma web per organizzare compiti, lezioni ed esami. Progettata per studenti universitari, consente di registrare date importanti, configurare materie e ricevere promemoria automatici per migliorare il rendimento accademico.',
       },
       tecnologias: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS', 'Vercel'],
       anio: 2025,
       cliente: {
         ES: 'Proyecto personal',
         EN: 'Personal project',
-        IT: 'Progetto personale'
+        IT: 'Progetto personale',
       },
       rol: {
         ES: 'Diseñador UX/UI & Desarrollador Frontend en Next.js',
         EN: 'UX/UI Designer & Frontend Developer in Next.js',
-        IT: 'Designer UX/UI & Sviluppatore Frontend in Next.js'
+        IT: 'Designer UX/UI & Sviluppatore Frontend in Next.js',
       },
       imagen: '/unitrack.png', // Ruta de la imagen
       link: 'https://taller-next-js-y-tailwind.vercel.app/', // Enlace al proyecto
@@ -94,27 +110,27 @@ export default function Proyectos({ onBack, onOpenMenu, onSelectProyecto }: {
       titulo: {
         ES: 'Pluo: Landing Page',
         EN: 'Pluo: Landing Page',
-        IT: 'Pluo: Landing Page'
+        IT: 'Pluo: Landing Page',
       },
       descripcion: {
         ES: 'Proyecto de maquetación UI que replica una landing page para una plataforma financiera. Centrado en el diseño responsivo y la fidelidad visual, construido con Next.js y Tailwind CSS como práctica de diseño frontend.',
         EN: 'UI mockup project replicating a landing page for a financial platform. Focused on responsive design and visual fidelity, built with Next.js and Tailwind CSS as a frontend design practice.',
-        IT: 'Progetto di mockup UI che replica una landing page per una piattaforma finanziaria. Incentrato sul design responsivo e sulla fedeltà visiva, realizzato con Next.js e Tailwind CSS come esercizio di design frontend.'
+        IT: 'Progetto di mockup UI che replica una landing page per una piattaforma finanziaria. Incentrato sul design responsivo e sulla fedeltà visiva, realizzato con Next.js e Tailwind CSS come esercizio di design frontend.',
       },
       tecnologias: ['HTML', 'CSS', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS', 'Vercel'],
       anio: 2025,
       cliente: {
         ES: 'Proyecto de práctica personal (UI estático)',
         EN: 'Personal practice project (static UI)',
-        IT: 'Progetto personale di pratica (UI statica)'
+        IT: 'Progetto personale di pratica (UI statica)',
       },
       rol: {
         ES: 'Maquetador Frontend y Diseñador UI',
         EN: 'Frontend Layout Designer & UI Designer',
-        IT: 'Layout Designer Frontend & Designer UI'
+        IT: 'Layout Designer Frontend & Designer UI',
       },
       imagen: '/pluto.png', // Ruta de la imagen
-      link: 'https://taller-dise-o-ui-con-inteligencia-artificial.vercel.app/', // Enlace al proyecto// No se incluye link porque es un proyecto estático
+      link: 'https://taller-dise-o-ui-con-inteligencia-artificial.vercel.app/', // Enlace al proyecto
     },
   ];
 
