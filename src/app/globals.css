@@ -1,14 +1,52 @@
 @import "tailwindcss";
 
+/* 🌈 Variables globales */
 :root {
-  --primary-color: #308a1e; /* verde oscuro */
-  --secondary-color: #F59E0B; /* Amarillo */
-  --accent-color: #10B981; /* Verde */
-  --background-color: #F3F4F6; /* Fondo gris claro */
-  --text-color: #191a19e8; /* Texto negro */
+  /* Paleta de marca */
+  --primary-color: #308a1e;         /* Verde oscuro */
+  --secondary-color: #f5f00b;       /* Amarillo vivo */
+  --accent-color: #10b981;          /* Verde menta */
+
+  /* Fondos pastel base */
+  --bg-pink: #fdecef;               /* Rosado claro */
+  --bg-green: #e8fdf1;              /* Verde muy claro */
+  --bg-blue: #eef5ff;               /* Azul cielo */
+  --bg-yellow: #fff9db;             /* Amarillo pastel */
+  --bg-base: #f3f4f6;               /* Gris claro neutro */
+
+  /* Gradientes pastel personalizados con opacidad */
+  --verde-pastel: rgba(168, 240, 211, 0.85);
+  --rosado-pastel: rgba(213, 169, 208, 0.85);
+  --amarillo-pastel: rgba(249, 231, 160, 0.85);
+  --verde-pastel-soft: rgba(168, 240, 211, 0.8);
+  --rosado-pastel-soft: rgba(213, 169, 208, 0.8);
+  --amarillo-pastel-soft: rgba(249, 231, 160, 0.8);
+
+  /* Tipografía y color de texto */
+  --text-color: #3f4662;            /* Gris azulado suave */
+  --font-family: 'Inter', sans-serif;
 }
 
+/* 🎨 Aplicación general */
 body {
-  background-color: var(--background-color);
+  background-color: var(--bg-base);
   color: var(--text-color);
+  font-family: var(--font-family);
+
+  
+}
+
+/* Modo oscuro */
+.dark {
+  --bg-base: #0e0e0e;
+  --text-color: #ffffff;
+
+  /* Gradientes oscuros intensos */
+  --verde-pastel: rgba(20, 60, 50, 0.85);
+  --rosado-pastel: rgba(60, 40, 50, 0.85);
+  --amarillo-pastel: rgba(80, 70, 30, 0.85);
+
+  --verde-pastel-soft: rgba(20, 60, 50, 0.5);
+  --rosado-pastel-soft: rgba(60, 40, 50, 0.5);
+  --amarillo-pastel-soft: rgba(80, 70, 30, 0.5);
 }
