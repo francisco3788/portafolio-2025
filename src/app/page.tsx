@@ -9,9 +9,21 @@ import Contacto from './components/Contacto';
 import Proyectos from './components/Proyectos';
 import DetalleProyecto from './components/DetalleProyecto';
 
+// Definimos la interfaz Proyecto (misma que usamos en Proyectos.tsx)
+interface Proyecto {
+  titulo: { [key: string]: string };
+  descripcion: { [key: string]: string };
+  tecnologias: string[];
+  anio: number;
+  cliente: { [key: string]: string };
+  rol: { [key: string]: string };
+  imagen: string;
+  link: string;
+}
+
 export default function Home() {
   const [currentPage, setCurrentPage] = useState<'hero' | 'menu' | 'acerca' | 'contacto' | 'proyectos' | 'detalle'>('hero');
-  const [selectedProyecto, setSelectedProyecto] = useState<any>(null);
+  const [selectedProyecto, setSelectedProyecto] = useState<Proyecto | null>(null);
 
   return (
     <main className="relative overflow-hidden">
@@ -90,7 +102,7 @@ export default function Home() {
             <Proyectos 
               onBack={() => setCurrentPage('hero')} 
               onOpenMenu={() => setCurrentPage('menu')} 
-              onSelectProyecto={(proyecto: any) => {
+              onSelectProyecto={(proyecto: Proyecto) => {
                 setSelectedProyecto(proyecto);
                 setCurrentPage('detalle');
               }}
