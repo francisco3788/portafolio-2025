@@ -2,6 +2,7 @@
 
 import { useLanguage } from '../context/LanguageContext';
 import { Menu as MenuIcon } from 'lucide-react';
+import Image from 'next/image';
 
 export default function AcercaDe({ onBack, onOpenMenu }: { onBack: () => void, onOpenMenu: () => void }) {
   const { language } = useLanguage();
@@ -22,7 +23,7 @@ export default function AcercaDe({ onBack, onOpenMenu }: { onBack: () => void, o
     IT: {
       title: 'CHI SONO',
       paragraph:
-        'Ciao! Sono Francisco, ma sui social media mi conoscono come Frank. Sono uno studente di Ingegneria del Software con un entusiasmo immenso per il mondo della tecnologia. Sono profondamente immerso nellaffascinante universo dello sviluppo web, esplorando strumenti come React, Next.js e Tailwind CSS, e sto muovendo i miei primi passi nel design UX/UI e nella creazione di API, unarea che mi entusiasma e che sto imparando a padroneggiare poco a poco. Adoro costruire soluzioni digitali che combinano creatività e funzionalità, e sono sempre aperto a imparare qualcosa di nuovo per portare le mie competenze al livello successivo.Fuori dallo schermo, la mia vita è piena di energia: sono un grande appassionato di calcio, sia guardarlo che giocarci con gli amici, e non cè niente che mi piaccia di più di una bella partita. La musica è la colonna sonora della mia giornata; ascolto di tutto, dal pop al rock, dal reggaeton ai classici, a seconda del momento. Sono anche un appassionato di videogiochi, specialmente FIFA, dove passo ore a perfezionare le mie abilità. Il cinema è unaltra delle mie grandi passioni: adoro immergermi in un bel film, dalle epiche dazione alle storie che fanno riflettere. E, naturalmente, la mia curiosità mi spinge a ricercare e imparare costantemente, che si tratti di software, design o qualsiasi argomento che stimoli il mio interesse.Sono in un viaggio di 성장 continua e amo condividere ciò che creo.',
+        'Ciao! Sono Francisco, ma sui social media mi conoscono come Frank. Sono uno studente di Ingegneria del Software con un entusiasmo immenso per il mondo della tecnologia. Sono profondamente immerso nellaffascinante universo dello sviluppo web, esplorando strumenti come React, Next.js e Tailwind CSS, e sto muovendo i miei primi passi nel design UX/UI e nella creazione di API, unarea che mi entusiasma e che sto imparando a padroneggiare poco a poco. Adoro costruire soluzioni digitali che combinano creatività e funzionalità, e sono sempre aperto a imparare qualcosa di nuovo per portare le mie competenze al livello successivo.Fuori dallo schermo, la mia vita è piena di energia: sono un grande appassionato di calcio, sia guardarlo che giocarci con gli amici, e non cè niente che mi piaccia di más di una bella partita. La musica è la colonna sonora della mia giornata; ascolto di tutto, dal pop al rock, dal reggaeton ai classici, a seconda del momento. Sono anche un appassionato di videogiochi, specialmente FIFA, dove passo ore a perfezionare le mie abilità. Il cinema è unaltra delle mie grandi passioni: adoro immergermi in un bel film, dalle epiche dazione alle storie che fanno riflettere. E, naturalmente, la mia curiosità mi spinge a ricercare e imparare costantemente, che si tratti di software, design o qualsiasi argomento che stimoli il mio interesse.Sono in un viaggio di crescita continua e amo condividere ciò che creo.',
       cv: 'curriculum vitae',
     },
   };
@@ -77,11 +78,18 @@ export default function AcercaDe({ onBack, onOpenMenu }: { onBack: () => void, o
           </a>
         </div>
 
-        <div className="flex-1 flex justify-center items-center">
-          <img
+        <div className="flex-1 flex justify-center items-center relative"> {/* Contenedor relativo */}
+          <Image
             src="/FotoPerfil.jpg"
             alt="Foto de perfil de Francisco"
-            className="rounded-xl h-auto max-h-[400px] w-full object-contain"
+            fill
+            style={{
+              objectFit: 'contain',
+              position: 'absolute',
+              top: '50%', // Centra verticalmente
+              transform: 'translateY(-50%)', // Ajusta para centrar perfectamente
+            }}
+            className="rounded-xl max-h-[400px]"
           />
         </div>
       </div>
