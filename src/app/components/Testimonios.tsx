@@ -36,7 +36,7 @@ export default function Testimonios({ onBack, onOpenMenu }: {
       mensaje: {
         ES: 'Trabajar con Francisco fue una experiencia enriquecedora. Su dedicación al detalle y compromiso son destacables.',
         EN: 'Working with Francisco was an enriching experience. His attention to detail and commitment stand out.',
-        IT: 'Lavorare con Francisco è stata un\'esperienza arricchente. La sua attenzione ai dettagli e l\'impegno sono notevoli.',
+        IT: 'Lavorare con Francisco è stata un’esperienza arricchente. La sua attenzione ai dettagli e l’impegno sono notevoli.',
       }
     },
     {
@@ -77,7 +77,7 @@ export default function Testimonios({ onBack, onOpenMenu }: {
         <div className="grid gap-6">
           {testimonios.map((item, i) => (
             <div key={i} className="p-4 bg-white/10 rounded-xl shadow">
-              <p className="text-sm mb-2 italic">"{item.mensaje[language]}"</p>
+              <p className="text-sm mb-2 italic">{`“${item.mensaje[language]}”`}</p>
               <span className="text-sm font-semibold block text-right">- {item.nombre[language]}</span>
             </div>
           ))}
