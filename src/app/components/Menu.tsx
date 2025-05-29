@@ -8,20 +8,26 @@ export default function Menu({
   onBack,
   onAcerca,
   onContacto,
-  onProyectos, // ✅ Se agrega aquí
+  onProyectos,
+  onTestimonios,
+  onExperiencia,
+  onHabilidades, // ✅ Nuevo
 }: {
   onBack: () => void;
   onAcerca: () => void;
   onContacto: () => void;
-  onProyectos: () => void; // ✅ Se agrega aquí
+  onProyectos: () => void;
+  onTestimonios: () => void;
+  onExperiencia: () => void;
+  onHabilidades: () => void; // ✅ Nuevo
 }) {
   const { language, toggleLanguage } = useLanguage();
   const { theme, toggleTheme } = useTheme();
 
   const translations = {
-    ES: ['BIENVENIDO', 'PROYECTOS', 'ACERCA DE', 'CONTACTO', 'GitHub', 'LinkedIn'],
-    EN: ['WELCOME', 'PROJECTS', 'ABOUT', 'CONTACT', 'GitHub', 'LinkedIn'],
-    IT: ['BENVENUTO', 'PROGETTI', 'CHI SONO', 'CONTATTI', 'GitHub', 'LinkedIn'],
+    ES: ['BIENVENIDO', 'PROYECTOS', 'ACERCA DE', 'CONTACTO', 'TESTIMONIOS', 'EXPERIENCIA', 'HABILIDADES', 'GitHub', 'LinkedIn'],
+    EN: ['WELCOME', 'PROJECTS', 'ABOUT', 'CONTACT', 'TESTIMONIALS', 'EXPERIENCE', 'SKILLS', 'GitHub', 'LinkedIn'],
+    IT: ['BENVENUTO', 'PROGETTI', 'CHI SONO', 'CONTATTI', 'TESTIMONIANZE', 'ESPERIENZA', 'COMPETENZE', 'GitHub', 'LinkedIn'],
   };
 
   const items = translations[language];
@@ -40,21 +46,15 @@ export default function Menu({
       {/* Fondos radiales */}
       <div
         className="absolute inset-0 -z-10"
-        style={{
-          background: 'radial-gradient(circle at 20% 20%, var(--verde-pastel-soft) 0%, transparent 40%)',
-        }}
+        style={{ background: 'radial-gradient(circle at 20% 20%, var(--verde-pastel-soft) 0%, transparent 40%)' }}
       />
       <div
         className="absolute inset-0 -z-10"
-        style={{
-          background: 'radial-gradient(circle at 80% 80%, var(--rosado-pastel-soft) 0%, transparent 40%)',
-        }}
+        style={{ background: 'radial-gradient(circle at 80% 80%, var(--rosado-pastel-soft) 0%, transparent 40%)' }}
       />
       <div
         className="absolute inset-0 -z-10"
-        style={{
-          background: 'radial-gradient(circle at 90% 10%, var(--amarillo-pastel-soft) 0%, transparent 40%)',
-        }}
+        style={{ background: 'radial-gradient(circle at 90% 10%, var(--amarillo-pastel-soft) 0%, transparent 40%)' }}
       />
 
       {/* Barra de navegación */}
@@ -89,15 +89,18 @@ export default function Menu({
 
       {/* Menú principal */}
       <div className="flex flex-col gap-8 sm:gap-10">
-        {items.slice(0, 4).map((text, i) => (
+        {items.slice(0, 7).map((text, i) => (
           <div
             key={i}
             className="text-left group cursor-pointer"
             onClick={
               i === 0 ? onBack :
-              i === 1 ? onProyectos : // ✅ Agregado aquí
+              i === 1 ? onProyectos :
               i === 2 ? onAcerca :
               i === 3 ? onContacto :
+              i === 4 ? onTestimonios :
+              i === 5 ? onExperiencia :
+              i === 6 ? onHabilidades :
               undefined
             }
           >
@@ -111,8 +114,8 @@ export default function Menu({
 
       {/* Enlaces sociales */}
       <div className="mt-16 text-sm flex flex-col gap-2 sm:flex-row sm:gap-8">
-        <a href="https://github.com/francisco3788" className="hover:underline">↗ {items[4]}</a>
-        <a href="https://www.linkedin.com/in/francisco-molina-b39326368/" className="hover:underline">↗ {items[5]}</a>
+        <a href="https://github.com/francisco3788" className="hover:underline">↗ {items[7]}</a>
+        <a href="https://www.linkedin.com/in/francisco-molina-b39326368/" className="hover:underline">↗ {items[8]}</a>
       </div>
     </section>
   );
