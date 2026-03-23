@@ -11,7 +11,7 @@ export default function Menu({
   onProyectos,
   onTestimonios,
   onExperiencia,
-  onHabilidades, // ✅ Nuevo
+  onHabilidades,
 }: {
   onBack: () => void;
   onAcerca: () => void;
@@ -19,7 +19,7 @@ export default function Menu({
   onProyectos: () => void;
   onTestimonios: () => void;
   onExperiencia: () => void;
-  onHabilidades: () => void; // ✅ Nuevo
+  onHabilidades: () => void;
 }) {
   const { language, toggleLanguage } = useLanguage();
   const { theme, toggleTheme } = useTheme();
@@ -62,6 +62,7 @@ export default function Menu({
         <button
           onClick={onBack}
           className="text-3xl font-bold text-[var(--text-color)]"
+          aria-label="Volver al inicio"
         >
           <span className="text-[var(--text-color)]">F</span>
           <span className="text-[var(--text-color)] text-base ml-2 hidden sm:inline">Frank</span>
@@ -69,19 +70,34 @@ export default function Menu({
         </button>
 
         <div className="flex items-center gap-5">
+          
+          {/* Botón idioma */}
           <button
             onClick={toggleLanguage}
+            aria-label="Cambiar idioma"
             className="flex items-center gap-1 text-base hover:underline"
           >
             <Languages className="w-5 h-5" />
             {language}
           </button>
 
-          <button onClick={toggleTheme}>
-            {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+          {/* Botón tema (CORREGIDO) */}
+          <button
+            onClick={toggleTheme}
+            aria-label="Cambiar tema"
+          >
+            {theme === 'light' ? (
+              <Moon className="w-5 h-5" />
+            ) : (
+              <Sun className="w-5 h-5" />
+            )}
           </button>
 
-          <button onClick={onBack}>
+          {/* Botón cerrar (CORREGIDO) */}
+          <button
+            onClick={onBack}
+            aria-label="Cerrar menú"
+          >
             <X className="w-6 h-6" />
           </button>
         </div>
