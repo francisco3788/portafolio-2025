@@ -50,15 +50,36 @@ export default function Hero({ onOpenMenu, onInfo, onProyectos }: { onOpenMenu: 
       {/* Barra superior */}
       <header className="absolute top-6 left-6 right-6 flex justify-between items-center z-50">
         <span className="text-3xl font-bold text-[var(--text-color)]">F</span>
+
         <div className="flex items-center gap-5 text-[var(--text-color)]">
-          <button onClick={toggleLanguage} className="flex items-center gap-1 text-base hover:underline">
+          
+          {/* Botón idioma (mejorado) */}
+          <button 
+            onClick={toggleLanguage} 
+            aria-label="Cambiar idioma"
+            className="flex items-center gap-1 text-base hover:underline"
+          >
             <Languages className="w-5 h-5" />
             {language}
           </button>
-          <button onClick={toggleTheme}>
-            {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+
+          {/* Botón tema (CORREGIDO) */}
+          <button 
+            onClick={toggleTheme} 
+            aria-label="Cambiar tema"
+          >
+            {theme === 'light' ? (
+              <Moon className="w-5 h-5" />
+            ) : (
+              <Sun className="w-5 h-5" />
+            )}
           </button>
-          <button onClick={onOpenMenu}>
+
+          {/* Botón menú (CORREGIDO) */}
+          <button 
+            onClick={onOpenMenu} 
+            aria-label="Abrir menú"
+          >
             <Menu className="w-6 h-6" />
           </button>
         </div>
@@ -74,8 +95,12 @@ export default function Hero({ onOpenMenu, onInfo, onProyectos }: { onOpenMenu: 
       </p>
 
       <div className="mt-10 flex gap-10 text-sm sm:text-base text-[var(--text-color)] font-normal z-10">
-        <button onClick={onProyectos} className="hover:underline">{t.projectLink}</button>
-        <button onClick={onInfo} className="hover:underline">{t.infoLink}</button>
+        <button onClick={onProyectos} className="hover:underline">
+          {t.projectLink}
+        </button>
+        <button onClick={onInfo} className="hover:underline">
+          {t.infoLink}
+        </button>
       </div>
     </section>
   );
